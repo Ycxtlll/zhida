@@ -1,0 +1,83 @@
+function deleteOne() {
+    var d = confirm("确定删除此信息？");
+
+    if (d === false){
+        alert("已取消删除！");
+        return false;
+    }
+}
+
+function backIndex() {
+    var a = confirm("返回首页将失去登录状态，是否继续？");
+    if (a === true){
+        localStorage.clear();
+    }
+    if (a === false){
+        // alert("已取消！");
+        return false;
+    }
+}
+
+/**
+ * 分页函数
+ * pno--页数
+ * psize--每页显示记录数
+ * 分页部分是从真实数据行开始，因而存在加减某个常数，以确定真正的记录数
+ * 纯js分页实质是数据行全部加载，通过是否显示属性完成分页功能
+ **/
+function goPage(pno){
+    var itable = document.getElementById("myTable");
+    var num = itable.rows.length;//表格所有行数(所有记录数)
+    console.log(num);
+    var totalPage = 0;//总页数
+    var pageSize = 11;//每页显示行数
+    //总共分几页
+    if(num/pageSize > parseInt(num/pageSize)){
+        totalPage=parseInt(num/pageSize)+1;
+    }else{
+        totalPage=parseInt(num/pageSize);
+    }
+    var currentPage = pno;//当前页数
+    var startRow = (currentPage - 1) * pageSize+1;//开始显示的行  31
+    var endRow = currentPage * pageSize;//结束显示的行   40
+    endRow = (endRow > num)? num : endRow;    //40
+    console.log(endRow);
+    //遍历显示数据实现分页
+    for(var i=1;i<(num+1);i++){
+        var irow = itable.rows[i-1];
+        if(i>=startRow && i<=endRow){
+            irow.style.display = "table-row";
+        }else{
+            irow.style.display = "none";
+        }
+    }
+    var pageEnd = document.getElementById("pageEnd");
+    var tempStr = "<span class='btn btn-outline-secondary'>共"+totalPage+"页</span>";
+ 
+ 
+//.bind("click",{"newPage":pageIndex},function(event){
+//        goPage((pageIndex-1)*pageSize+1,(pageIndex-1)*pageSize+pageSize);
+//    }).appendTo('#pages');
+    if(currentPage>1){
+        tempStr += "<span class='btn btn-outline-secondary' href=\"#\" onClick=\"goPage("+(1)+")\">首页</span>";
+        tempStr += "<span class='btn btn-outline-secondary' href=\"#\" onClick=\"goPage("+(currentPage-1)+")\">上一页</span>"
+    }else{
+        tempStr += "<span class='btn btn-outline-secondary'>首页</span>";
+        tempStr += "<span class='btn btn-outline-secondary'>上一页</span>";
+    }
+ 
+    for(var pageIndex= 1;pageIndex<totalPage+1;pageIndex++){
+        tempStr += "<a onclick=\"goPage("+pageIndex+")\"><span class='btn btn-outline-secondary'>"+ pageIndex +"</span></a>";
+    }
+ 
+    if(currentPage<totalPage){
+        tempStr += "<span class='btn btn-outline-secondary' href=\"#\" onClick=\"goPage("+(currentPage+1)+")\">下一页</span>";
+        tempStr += "<span class='btn btn-outline-secondary' href=\"#\" onClick=\"goPage("+(totalPage)+")\">尾页</span>";
+    }else{
+        tempStr += "<span class='btn btn-outline-secondary'>下一页</span>";
+        tempStr += "<span class='btn btn-outline-secondary'>尾页</span>";
+    }
+ 
+    document.getElementById("barcon").innerHTML = tempStr;
+ 
+}

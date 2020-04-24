@@ -1,0 +1,20 @@
+/*通用样式*/
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /*remove the gap so it doesn't close*/
+}
+
+.shadow-sm:hover{
+    transform: scale(1.1);
+    transition:all .4s;
+    -moz-transition:all .4s;
+    -webkit-transition:all .4s;
+    -o-transition:all .4s;
+    z-index: 777;
+}
+
+html.sr .three{
+    visibility: hidden;
+}

@@ -1,0 +1,41 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" -->
+
+
+    <!--1定义一个jdbc数据源，创建一个驱动管理数据源的bean
+    org.apache.ibatis.datasource.pooled.PooledDataSource   			driver
+    org.springframework.jdbc.datasource.DriverManagerDataSource		driverClassName
+    -->
+    <bean id="ds1"	class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+        <property name="driver" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://cdb-jai8uq1s.bj.tencentcdb.com:10201/zhida" />
+        <property name="username" value="root" />
+        <property name="password" value="19980903-a" />
+    </bean>
+    <!--2  通过指定数据源ds1   创建一个SqlSessionFactoryBean实例，将该实例交给Spring Ioc容器管理-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 指定数据源 -->
+        <property name="dataSource" ref="ds1" />
+        <!-- 指定配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+    <!--3 使用Mybatis框架为集成Spring开发的包扫描类     MapperScannerConfigurer 来根据具体使用情况调用相应PO映射数据封装   -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="addToConfig" value="true"/>
+        <property name="basePackage" value="zhida.dao"/>
+    </bean>
+    <!--   -->
+    <context:component-scan base-package="zhida" />
+
+
+
+</beans>

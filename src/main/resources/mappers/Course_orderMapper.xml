@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.ICourse_orderDao">
+    <select id="selectAll"  resultType="Course_order">
+		select * from course_order
+	</select>
+	<select id="selectOneByID" resultType="Course_order">
+		select * from course_order where orderId = #{orderId}
+	</select>
+	<select id="selectByTitle" resultType="Course_order">
+		select * from course_order where courseTitle like concat(concat('%', #{courseTitle}) ,'%')
+	</select>
+	<insert id="insertOne" parameterType="Course_order">
+		insert into course_order
+		(courseId,userId,courseTitle,payCost,payTime,pictureUrl,modifiedTime)
+		values 
+		(#{courseId},#{userId},#{courseTitle},#{payCost},current_time,#{pictureUrl},current_time )
+	</insert>
+	<update id="updateOne" parameterType="Course_order">
+		update course_order
+		<set>
+			<if test="courseId != null">
+				courseId=#{courseId},
+			</if>
+			<if test="userId != null">
+				userId=#{userId},
+			</if>
+			<if test="courseTitle != null">
+				courseTitle=#{courseTitle},
+			</if>
+			<if test="payCost != null">
+				payCost=#{payCost},
+			</if>
+			<if test="payTime != null">
+				payTime=#{payTime},
+			</if>
+			<if test="pictureUrl != null">
+				pictureUrl=#{pictureUrl},
+			</if>
+			modifiedTime = current_time
+		</set>
+		where orderId = #{orderId}
+	</update>
+	<delete id="deleteOne" parameterType="Course_order">
+		delete from course_order where orderId = #{orderId }
+	</delete>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.IGuideDao">
+    <select id="selectAll"  resultType="Guide">
+		select * from guide
+	</select>
+	<select id="selectOneByID" resultType="Guide">
+		select * from guide where guideId = #{guideId}
+	</select>
+	<select id="selectByTitle" resultType="Guide">
+		select * from guide where guideTitle like concat(concat('%', #{guideTitle}) ,'%')
+	</select>
+	<insert id="insertOne" parameterType="Guide">
+		insert into guide
+		(guideTitle,releaseDate,guideUrl)
+		values
+		(#{guideTitle},current_time ,#{guideUrl})
+	</insert>
+	<update id="updateOne" parameterType="Guide">
+		update guide
+		<set>
+			<if test="guideTitle != null">
+				guideTitle = #{guideTitle},
+			</if>
+			<if test="releaseDate != null">
+				releaseDate = #{releaseDate},
+			</if>
+			<if test="guideUrl != null">
+				guideUrl = #{guideUrl}
+			</if>
+		</set>
+		where guideId = #{guideId}
+	</update>
+	<delete id="deleteOne" parameterType="Guide">
+		delete from guide where guideId = #{guideId}
+	</delete>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.ICourseDao">
+    <select id="selectAll"  resultType="Course">
+		select * from course
+	</select>
+	<select id="selectOneByID" resultType="Course">
+		select * from course where courseId = #{courseId}
+	</select>
+	<select id="selectByTitle" resultType="Course">
+		select * from course where courseTitle like concat(concat('%', #{courseTitle}) ,'%')
+	</select>
+	<insert id="insertOne" parameterType="Course">
+		insert into course
+		(courseType,courseTitle,courseTeacher,courseContent,pictureUrl,courseCost,modifiedTime)
+		values 
+		(#{courseType},#{courseTitle},#{courseTeacher},#{courseContent},#{pictureUrl},#{courseCost},current_time )
+	</insert>
+	<update id="updateOne" parameterType="Course">
+		update course
+		<set>
+			<if test="courseType != null">
+				courseType=#{courseType},
+			</if>
+			<if test="courseTitle != null">
+				courseTitle=#{courseTitle},
+			</if>
+			<if test="courseTeacher != null">
+				courseTeacher=#{courseTeacher},
+			</if>
+			<if test="courseContent != null">
+				courseContent=#{courseContent},
+			</if>
+			<if test="pictureUrl != null">
+				pictureUrl=#{pictureUrl},
+			</if>
+			<if test="courseCost != null">
+				courseCost=#{courseCost},
+			</if>
+			modifiedTime = current_time
+		</set>
+		where courseId = #{courseId}
+	</update>
+	<delete id="deleteOne" parameterType="Course">
+		delete from course where courseId = #{courseId}
+	</delete>
+</mapper>

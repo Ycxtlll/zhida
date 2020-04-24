@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.IMessageDao">
+    <select id="selectAll" resultType="Message">
+        select * from message
+    </select>
+    <select id="selectByUserId" resultType="Message">
+        select * from message
+        where userId = #{userId}
+        ORDER BY modifiedTime DESC;
+    </select>
+    <update id="updateStatus" parameterType="Message">
+        update message set messageStatus = 1 where messageId = #{messageId}
+    </update>
+    <update id="updateByUserId" parameterType="Message">
+        update message set messageStatus = 1 where userId = #{userId};
+    </update>
+    <insert id="insertMsg" parameterType="Message">
+        insert into message(userId,messageTitle,messageContent,modifiedTime,messageStatus)
+        values (#{userId}, #{messageTitle}, #{messageContent}, current_time , 0)
+    </insert>
+    <delete id="deleteById" parameterType="Message">
+        delete from message where messageId = #{messageId}
+    </delete>
+</mapper>

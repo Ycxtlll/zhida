@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.INewsDao">
+    <select id="selectAll"  resultType="News">
+		select * from news ORDER BY releaseDate DESC
+	</select>
+	<select id="selectOneByID" resultType="News">
+		select * from news where newsId=#{newsId}
+	</select>
+	<select id="selectByTitle" resultType="News">
+		select * from news where newsTitle like concat(concat('%', #{newsTitle}) ,'%')
+	</select>
+	<select id="selectByDate" resultType="News">
+		select * from news where releaseDate = #{releaseDate}
+	</select>
+	<insert id="insertOne" parameterType="News">
+		insert into news
+		(newsTitle,releaseTime,newsUrl)
+		values
+		(#{newsTitle},current_time ,#{newsUrl})
+	</insert>
+	<update id="updateOne" parameterType="News">
+		update news
+		<set>
+			<if test="newsTitle != null">
+				newsTitle = #{newsTitle},
+			</if>
+			<if test="releaseDate != null">
+				releaseDate = #{releaseDate},
+			</if>
+			<if test="newsUrl != null">
+				newsUrl = #{newsUrl}
+			</if>
+		</set>
+		where newsId = #{newsId}
+	</update>
+	<delete id="newsId" parameterType="News">
+		delete from news where newsId =#{newsId}
+	</delete>
+</mapper>

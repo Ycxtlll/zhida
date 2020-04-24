@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhida.dao.IFeedbackDao">
+    <select id="selectAll"  resultType="Feedback">
+		select * from feedback
+	</select>
+    <select id="selectOneByID" resultType="Feedback">
+		select * from feedback where feedbackId = #{feedbackId}
+	</select>
+	<insert id="insertOne" parameterType="Feedback">
+		insert into feedback
+		(userId,contactInfo,feedbackContent,modifiedTime)
+		values
+		(#{userId},#{contactInfo},#{feedbackContent},current_time )
+	</insert>
+    <delete id="deleteOne" parameterType="Feedback">
+		delete from feedback where feedbackId = #{feedbackId}
+	</delete>
+</mapper>
