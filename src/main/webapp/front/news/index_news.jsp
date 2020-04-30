@@ -101,7 +101,7 @@
     </div>
     <div id="showNews" class="row" >
         <div class="card col-3 none" >
-            <img class="card-img-top" src="/static/image/index/201.png" alt="Card image cap">
+            <img class="card-img-top" src="/static/image/index/newss.png" alt="Card image cap">
             <div class="card-body text-center">
                 <form>
                     <label style="color: #6d63b2">通过日期搜索</label>

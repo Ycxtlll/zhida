@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/jquery-3.4.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body class="text-center">
     <div class="container three" style="margin-top: 2%;">
         <form class="form-signin needs-validation shadow bg-light rounded" novalidate autocomplete="off">
-            <a href="/"><img class="mb-4" src="/static/image/login/login01.png" alt="" width="72" height="72"></a>
+            <a href="/" id="pop" data-toggle="popover" data-content="点此可以返回主页"><img class="mb-4 rounded-circle" src="/static/image/login/logo_.png" alt="" width="150" height="150"></a>
             <h1 class="h3 mb-3 font-weight-normal">请 输 入 以 下 信 息</h1>
             <label for="loginName" class="sr-only">Login Name</label>
             <input id="loginName" type="text" class="form-control" placeholder="请输入用户名" required>
@@ -83,7 +84,7 @@
 <script>
     const fo = {
         distance : '200%',
-        origin : 'right',
+        origin : 'left',
         opacity : null
     }
     ScrollReveal().reveal('.three',fo)

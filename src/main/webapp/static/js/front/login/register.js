@@ -28,6 +28,12 @@ $(document).ready(function () {
             $("#registerBtn").click();
         }
     };
+
+    $("#pop").popover({
+        trigger: 'hover',
+        placement: 'right'
+    });
+
 });
 
 $("#registerBtn").click(function () {

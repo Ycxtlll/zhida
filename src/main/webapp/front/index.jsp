@@ -149,7 +149,7 @@
                 <p class="lead"> 又将到一年高校毕业季。今年，应届毕业生规模预计达到834万人。面对庞大的求职大军，从国家到地方层面都出台了配套政策：提供求职创业补贴、严禁就业歧视、放宽落户条件……一系列举措将为毕业生踏出校门保驾护。</p>
             </div>
             <div class="col-md-5">
-                <img data-src="/static/image/index/301.jpg" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
+                <img data-src="/static/image/index/301.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
             </div>
         </div>
 
@@ -161,7 +161,7 @@
                 <p class="lead">从真实案例进行入手，通过分析评价让你了解一些该注意的问题；描述简历制作技巧、注意事项让你制作一个合格的简历；从HR角度讲述什么样的建立可以脱颖而出。。。快来了解吧！</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img data-src="/static/image/index/302.jpg" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
+                <img data-src="/static/image/index/302.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
             </div>
         </div>
 
@@ -175,7 +175,7 @@
                     <a class="aaa" href="/baidu2">->2015百度【算法研发】校招面试真题——含解题思路！！</a></p>
             </div>
             <div class="col-md-5">
-                <img data-src="/static/image/index/303.jpg" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
+                <img data-src="/static/image/index/303.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
             </div>
         </div>
 

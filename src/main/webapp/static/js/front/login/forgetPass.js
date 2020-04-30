@@ -27,6 +27,12 @@ $(document).ready(function () {
             $("#forgetPassBtn").click();
         }
     };
+
+    $("#pop").popover({
+        trigger: 'hover',
+        placement: 'right'
+    });
+
 });
 
 $("#forgetPassBtn").click(function () {

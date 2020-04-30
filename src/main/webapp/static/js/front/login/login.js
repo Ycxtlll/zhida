@@ -30,6 +30,11 @@ $(document).ready(function () {
         }
     };
 
+    $("#pop").popover({
+        trigger: 'hover',
+        placement: 'right'
+    });
+
 });
 
 $("#loginBtn").click(function () {
@@ -60,3 +65,4 @@ $("#loginBtn").click(function () {
     );
 
 });
+
