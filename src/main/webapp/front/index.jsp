@@ -61,7 +61,7 @@
 
 <MAIN role="main">
 
-    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,9 +69,10 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="${pageContext.request.contextPath}/static/image/index/101.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+                <img class="d-block w-100"
+                     src="${pageContext.request.contextPath}/static/image/index/101.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
                 <div class="container">
-                    <div class="carousel-caption text-left">
+                    <div class="carousel-caption text-left one">
                         <h1>职 达 面 试</h1>
                         <p> 我们致力于为在校学生、即将毕业的学生或者已经毕业但是尚未找到工作的同学提供一些面试、就业指导,
                             让您可以对面试有更加直接的了解和体验，提升自身竞争力，帮助您找到理想的工作。</p>
@@ -79,9 +80,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 lazy" data-src="${pageContext.request.contextPath}/static/image/index/102.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption">
+                <img class="d-block w-100 lazy"
+                     data-src="${pageContext.request.contextPath}/static/image/index/102.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                <div class="container ">
+                    <div class="carousel-caption one">
                         <h1>求 职</h1>
                         <p>在求职页面，我们准备了一些与就业有关的新闻报道，包含一些招聘信息，就业政策新闻等等。
                             想要了解更多可以点击下方或者导航的求职按钮！</p>
@@ -93,10 +95,13 @@
                      data-src="${pageContext.request.contextPath}/static/image/index/103.jpg?auto=yes&bg=555&fg=333&text=Third slide"
                      alt="Third slide">
                 <div class="container">
-                    <div class="carousel-caption text-left">
+                    <div class="carousel-caption text-left one">
                         <h1>面 试</h1>
-                        <p>在面试页面，我们准备了一些面试技巧和小测试，可以学习面试时需要了解的一些技巧或者测试自己的性格更加适合什么样的职业。
-                            想要了解更多可以点击下方或者导航的面试按钮！</p>
+                        <div class="c-i-width">
+                            <p>在面试页面，我们准备了一些面试技巧和小测试，可以学习面试时需要了解的一些技巧或者测试自己的性格更加适合什么样的职业。
+                                想要了解更多可以点击下方或者导航的面试按钮！</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -145,11 +150,11 @@
 
         <div class="row position-relative three">
             <div class="col-md-7 position-static">
-                <h2 class="featurette-heading">精品新闻推荐. <br><a href="/news001" class="text-muted stretched-link">2019年应届毕业生就业优惠政策！</a></h2>
+                <h2 class="featurette-heading">精品新闻推荐. <br><a href="/news001" class="text-muted ">>2019年应届毕业生就业优惠政策！</a></h2>
                 <p class="lead"> 又将到一年高校毕业季。今年，应届毕业生规模预计达到834万人。面对庞大的求职大军，从国家到地方层面都出台了配套政策：提供求职创业补贴、严禁就业歧视、放宽落户条件……一系列举措将为毕业生踏出校门保驾护。</p>
             </div>
-            <div class="col-md-5">
-                <img data-src="/static/image/index/301.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
+            <div class="col-md-5 img-fd">
+                <img data-src="/static/image/index/301.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy " width="500" height="500">
             </div>
         </div>
 
@@ -157,10 +162,10 @@
 
         <div class="row position-relative three">
             <div class="col-md-7 order-md-2 position-static">
-                <h2 class="featurette-heading ">简历制作教程. <br><a href="/resume" class="text-muted stretched-link">写好求职简历必看制作教程！</a></h2>
+                <h2 class="featurette-heading ">简历制作教程. <br><a href="/resume" class="text-muted ">>写好求职简历必看制作教程！</a></h2>
                 <p class="lead">从真实案例进行入手，通过分析评价让你了解一些该注意的问题；描述简历制作技巧、注意事项让你制作一个合格的简历；从HR角度讲述什么样的建立可以脱颖而出。。。快来了解吧！</p>
             </div>
-            <div class="col-md-5 order-md-1">
+            <div class="col-md-5 order-md-1 img-fd">
                 <img data-src="/static/image/index/302.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
             </div>
         </div>
@@ -174,7 +179,7 @@
                     <a class="aaa" href="/baidu1">->2015百度【数据处理】面试真题！！</a><br>
                     <a class="aaa" href="/baidu2">->2015百度【算法研发】校招面试真题——含解题思路！！</a></p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 img-fd">
                 <img data-src="/static/image/index/303.png" class="bd-placeholder-img bd-placeholder-img-lg  img-fluid mx-auto lazy" width="500" height="500">
             </div>
         </div>
@@ -200,16 +205,32 @@
 <script src="/static/js/front/index.js"></script>
 <script>
     $("img.lazy").lazyload();
+
     const slideUp = {
         distance: '150%',
         origin: 'bottom',
         opacity: null
     };
+    ScrollReveal().reveal('.three',slideUp);
+
     const oneByOne = {
         interval: 260
     }
     ScrollReveal().reveal('.shadow-sm',oneByOne)
-    ScrollReveal().reveal('.three',slideUp);
+
+    let dd = function(or){
+        const de = {
+            distance: '110%',
+            origin: or,
+            delay: 100
+        }
+        ScrollReveal().reveal('.one',de)
+    }
+    dd('top');
+    $('.carousel').on('slid.bs.carousel',function (e) {
+        dd('bottom');
+    })
+
     const scroll = new SmoothScroll('a[href*="#"]',{
         speed: 300
     });

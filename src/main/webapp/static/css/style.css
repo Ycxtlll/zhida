@@ -15,6 +15,20 @@
     z-index: 777;
 }
 
+.img-fd:hover{
+    transform: scale(1.1);
+    transition:all .4s;
+    -moz-transition:all .4s;
+    -webkit-transition:all .4s;
+    -o-transition:all .4s;
+    z-index: 777;
+}
+
 html.sr .three{
     visibility: hidden;
 }
+
+html.sr .one{
+    visibility: hidden;
+}
+

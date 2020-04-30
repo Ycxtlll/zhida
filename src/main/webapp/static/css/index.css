@@ -15,7 +15,6 @@ body {
 /* Carousel base class */
 .carousel {
     margin-bottom: 3rem;
-
 }
  /*Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -37,6 +36,16 @@ body {
     max-height: 30rem;
     min-height: 16rem;
 }
+
+.c-i-width{
+    width: 55%;
+}
+@media (max-width: 1000px) {
+    .c-i-width{
+        width: auto;
+    }
+}
+
 
 
 /* MARKETING CONTENT
@@ -140,3 +149,4 @@ body {
         font-size: 3.5rem;
     }
 }
+
