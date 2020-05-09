@@ -12,7 +12,23 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <style>
         body{
-            background-color: #bed4d5;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(125deg,#00f260, #0575e6);
+            background-size: 300%;
+            animation: bganimation 20s infinite;
+        }
+        @keyframes bganimation {
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
         }
         .tform{
             width: 100%;
@@ -67,8 +83,8 @@
         </div>
     </nav>
 </header>
-<main class="container" style="margin-top: 70px;">
-    <div class="tform shadow-sm bg-white rounded three">
+<main class="container" style="height: 100vh">
+    <div class="tform shadow-sm bg-white rounded three" style="margin-top: 70px;">
         <form class="needs-validation" novalidate autocomplete="off">
             <div class="form-group">
                 <label>联系方式（选填）</label>
@@ -93,12 +109,13 @@
 <footer class="container fixed-bottom">
     <hr>
 <!--    <p class="float-right"><a href="#">Back to top</a></p>-->
-    <p><a href="/about" style="color: gray;">&copy; 2017-2020 职达面试 </a>&middot; 备案/许可证编号：津ICP备19009021号 &middot;
-        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12022302000551" style="color: gray;">
+    <p><a href="/about" style="color: white;">&copy; 2017-2020 职达面试 </a>&middot; 备案/许可证编号：津ICP备19009021号 &middot;
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12022302000551" style="color: whitesmoke;">
             <img src="/static/image/beian.png"/>津公网安备 12022302000551号
         </a>
     </p>
 </footer>
+
 </body>
 
 <script>
@@ -109,4 +126,5 @@
     }
     ScrollReveal().reveal('.three',scroll)
 </script>
+
 </html>
