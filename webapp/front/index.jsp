@@ -200,6 +200,7 @@
         </a>
     </p>
 </footer>
+
 </body>
 
 <script src="/static/js/front/index.js"></script>
@@ -235,4 +236,5 @@
         speed: 300
     });
 </script>
+
 </html>

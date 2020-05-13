@@ -137,4 +137,5 @@
 <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/front/index.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/front/news/index_news.js"></script>
+
 </html>

@@ -79,8 +79,10 @@
         </p>
     </footer>
 </main>
+
 </body>
 <script src="/static/js/jquery-3.4.1.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/front/index.js"></script>
+
 </html>

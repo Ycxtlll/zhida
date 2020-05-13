@@ -15,19 +15,19 @@
             overflow: hidden;
             width: 100vw;
             height: 100vh;
-            background-image: linear-gradient(125deg,#00f260, #0575e6);
-            background-size: 300%;
-            animation: bganimation 20s infinite;
+            background-image: linear-gradient(125deg,#7F7FD5,#86A8E7,#91EAE4);
+            background-size: 400%;
+            animation: bganimation 25s linear infinite;
         }
         @keyframes bganimation {
             0%{
-                background-position: 0% 50%;
+                background-position: 0 50%;
             }
             50%{
                 background-position: 100% 50%;
             }
             100%{
-                background-position: 0% 50%;
+                background-position: 0 50%;
             }
         }
         .tform{
@@ -84,7 +84,7 @@
     </nav>
 </header>
 <main class="container" style="height: 100vh">
-    <div class="tform shadow-sm bg-white rounded three" style="margin-top: 70px;">
+    <div class="tform shadow-sm bg-white rounded three" style="margin-top: 100px;">
         <form class="needs-validation" novalidate autocomplete="off">
             <div class="form-group">
                 <label>联系方式（选填）</label>

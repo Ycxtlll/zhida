@@ -94,4 +94,9 @@ public class JumpController {
     public String toJoinVip(){
         return "front/joinVip";
     }
+
+    @RequestMapping(value = "/notFound")
+    public String toNotFound(){
+        return "front/notFound";
+    }
 }

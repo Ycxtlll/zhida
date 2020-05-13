@@ -425,4 +425,5 @@
 <script>
     const scroll = new SmoothScroll('a[href*="#"]');
 </script>
+
 </html>
