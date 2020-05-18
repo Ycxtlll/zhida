@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/pageTop.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 </head>
 <style>
     .article{
@@ -63,7 +64,7 @@
     </nav>
 </header>
 <main class="container" style="margin-top: 70px">
-    <div class="btdiv"><a href="#" class="btt border rounded-circle" style="text-decoration:none;">↑<br>Top</a></div>
+    <div class="btdiv"><a data-scroll href="#" class="btt border rounded-circle" style="text-decoration:none;">↑<br>Top</a></div>
 
     <h3 class="text-center">2019年应届毕业生就业优惠政策</h3>
     <hr>
