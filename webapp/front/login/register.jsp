@@ -14,6 +14,15 @@
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        .feedback{
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 80%;
+            color: #dc3545;
+        }
+    </style>
 </head>
 <body class="text-center">
     <div class="container three" style="margin-top: 2%;">
@@ -22,33 +31,36 @@
                 <img class="mb-4 rounded-circle" src="/static/image/login/logo_.png" alt="" width="150" height="150"></a>
             <h1 class="h3 mb-3 font-weight-normal">请 注 册</h1>
             <label for="loginName" class="sr-only">Login Name</label>
-            <input id="loginName" type="text" class="form-control" placeholder="请输入用户名" required autofocus>
-            <div id="existName" class="text-left"></div>
-            <div class="invalid-feedback text-left">
-                请输入用户名！
+            <input id="loginName" type="text" class="form-control" placeholder="请输入用户名" required autofocus onblur="checkUser()">
+
+<%--            反馈--%>
+            <div id="existName" class="text-left">
+
             </div>
 
             <label for="password" class="sr-only">Password</label>
-            <input id="password" type="password" class="form-control" placeholder="请输入密码" required>
-            <div class="invalid-feedback text-left">
-                请输入密码！
+            <input id="password" type="password" class="form-control" maxlength="16" placeholder="请输入密码" required oninput="checkCode()">
+            <%--            反馈--%>
+            <div id="pass" class="text-left">
+
             </div>
 
             <label for="check_password" class="sr-only">Password</label>
-            <input id="check_password" type="password" class="form-control" placeholder="请再次输入密码" required>
+            <input id="check_password" type="password" class="form-control" maxlength="16" placeholder="请再次输入密码" required oninput="checkPass()">
+
+            <%--            反馈--%>
             <div id="checkP" class="text-left"></div>
-            <div  class="invalid-feedback text-left">
-                请输入密码！
-            </div>
 
             <div>
                 <span class="small" style="color: gray">注：以下内容将用于找回密码，皆为选填！</span>
                 <label for="user_name" class="sr-only">Name</label>
                 <input id="user_name" type="text" class="form-control" placeholder="请输入姓名">
                 <label for="user_phone" class="sr-only">Phone</label>
-                <input id="user_phone" type="number" class="form-control" placeholder="请输入电话号码">
+                <input id="user_phone" type="text" class="form-control" maxlength="11" placeholder="请输入电话号码" oninput="checkPhone()">
+                <div id="checkPh" class="text-left"></div>
                 <label for="user_email" class="sr-only">E-Mail</label>
-                <input id="user_email" type="email" class="form-control" placeholder="请输入E-Mail地址">
+                <input id="user_email" type="email" class="form-control" placeholder="请输入E-Mail地址" oninput="checkEmail()">
+                <div id="checkEm" class="text-left"></div>
             </div>
 
             <div>

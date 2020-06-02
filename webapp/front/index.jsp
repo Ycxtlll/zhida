@@ -70,7 +70,8 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100"
-                     src="${pageContext.request.contextPath}/static/image/index/101.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+<%--                     src="${pageContext.request.contextPath}/static/image/index/101.jpg"--%>
+                     alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-left one">
                         <h1>职 达 面 试</h1>
@@ -80,8 +81,9 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 lazy"
-                     data-src="${pageContext.request.contextPath}/static/image/index/102.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                <img class="d-block w-100 "
+<%--                     src="${pageContext.request.contextPath}/static/image/index/102.jpg"--%>
+                     alt="Second slide">
                 <div class="container ">
                     <div class="carousel-caption one">
                         <h1>求 职</h1>
@@ -91,8 +93,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 lazy"
-                     data-src="${pageContext.request.contextPath}/static/image/index/103.jpg?auto=yes&bg=555&fg=333&text=Third slide"
+                <img class="d-block w-100 "
+<%--                     src="${pageContext.request.contextPath}/static/image/index/103.jpg"--%>
                      alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption text-left one">
@@ -205,11 +207,26 @@
 
 <script src="/static/js/front/index.js"></script>
 <script>
+    $(document).ready(function () {
+        let srcs = []
+        srcs.push("/static/image/index/101.jpg")
+        srcs.push("/static/image/index/102.jpg")
+        srcs.push("/static/image/index/103.jpg")
+        let images = $(".d-block")
+        images.eq(0).attr('src',srcs[0])
+        for (let i = 1; i<3; i++){
+            setTimeout(function () {
+                images.eq(i).attr('src', srcs[i])
+            },200)
+        }
+    })
+</script>
+<script>
     $("img.lazy").lazyload();
 
     const slideUp = {
         distance: '150%',
-        origin: 'bottom',
+        origin: 'right',
         opacity: null
     };
     ScrollReveal().reveal('.three',slideUp);

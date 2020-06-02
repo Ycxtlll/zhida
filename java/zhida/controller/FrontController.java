@@ -98,12 +98,18 @@ public class FrontController {
 
 	@RequestMapping(value = "checkName.do",method = {RequestMethod.GET,RequestMethod.POST},produces = "application/json; charset=UTF-8")
 	@ResponseBody
-	public String forgetPass(String user_login_name, HttpServletRequest request, HttpServletResponse response){
-		System.out.println(user_login_name);
+	public String forgetPass(String userName, HttpServletRequest request, HttpServletResponse response){
+		System.out.println(userName);
 		try{
-			Integer user_id = userBiz.checkLoginName(user_login_name).getUserId();
+			User user = userBiz.checkLoginName(userName);
+			String result;
+			if (user == null){
+				result = "ok";
+			}else {
+				result = "alsoHad";
+			}
             Gson g=new Gson();
-            String rtn=g.toJson(user_id);
+            String rtn=g.toJson(result);
             response.addHeader("Access-Control-Allow-Origin", "*");//允许所有来源访问
             response.addHeader("Access-Control-Allow-Method","POST,GET");//允许访问的方式
             return rtn;
